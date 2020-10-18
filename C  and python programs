@@ -1,0 +1,128 @@
+1.Take 3 inputs. Consider a,b and n. Where and b are first two terms of fibanocci series. F(n)=f(n-1)+f(n-2)
+Print the nth term of the fibonocci series.
+
+Input: 4 10 6
+Output: 62
+
+Program:(in c)
+#include <stdio.h>
+int main()
+{
+    int a,b,n,c,x=2;
+    scanf("%d %d %d",&a,&b,&n);
+    int i=n-2;
+    if(n==1)
+    printf("%d",a);
+    else if(n==2)
+    printf("%d",b);
+    else
+    {
+        while(i--)
+        {
+        x++;
+        c=a+b;
+        if(n==x)
+        {
+        printf("%d",c);
+        break;
+        }
+        a=b;
+        b=c;
+        }
+    }
+ }
+Testcase1:
+0 1 10
+34
+Testcase2:
+3 5 6
+34
+Testcase3:
+1 6 10
+225
+
+
+2.Given a number n. The task is to check if the number n is prime and al its digits are prime or not. 
+If both the number and all of its digits are prime then print YES otherwise print NO.
+
+Input:
+2
+33
+53
+Output:
+NO
+YES
+
+Program:(in python)
+n = int(input())
+a = []
+def prime(x):
+    if(x>=2):
+        for i in range(2,x):
+            if(x%i) == 0:
+                return False   
+    return True
+def digit(b):
+    while(b):
+        s = b%10
+        if(s!=2 and s!=3 and s!=5 and s!=7):
+            return False
+        b = int(b/10)
+       return True
+    
+for i in range(n):
+    a.append(int(input()))
+for i in range(n):
+    b = a[i]
+    if prime(b) is True: 
+        if digit(b) is True:
+            print("YES")
+        else:
+            print("NO")
+    else:
+        print("NO")
+testcase1:
+2     
+33
+53
+NO
+YES
+Testcase2
+3
+36
+97
+47
+NO
+NO
+NO
+            
+
+
+
+3.pallindrome without 0
+Given a number,print yes if after removing all the zeroes it becomes a palindrome otherwise no.
+
+Input:
+30103
+Output:
+Yes
+
+Program:(in python)
+n=str(input())
+a=n.replace('0','')
+b=a[::-1]
+if(a == b):
+    print("yes")
+else:
+    print("no")
+testcase1:
+30303
+Yes
+Testcase2:
+10202
+no
+testcase3:
+50665
+yes
+
+
